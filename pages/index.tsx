@@ -4,7 +4,7 @@ export default function Home() {
   let session = useSession();
 
   const awsAPI = async () => {
-    const { url } = await (await fetch('http://localhost:3000/api/awssdk', {
+    const { url } = await (await fetch('https://demo-app-inky.vercel.app/api/awssdk', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -34,7 +34,7 @@ export default function Home() {
 
 
   const googleAPI = async () => {
-    await fetch('http://localhost:3000/api/youtube', {
+    await fetch('https://demo-app-inky.vercel.app/api/youtube', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
