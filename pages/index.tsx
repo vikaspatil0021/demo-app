@@ -2,7 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   let session = useSession();
-
+  console.log(session);
   const awsAPI = async () => {
     const { url } = await (await fetch('https://demo-app-inky.vercel.app/api/awssdk', {
       method: 'POST',
