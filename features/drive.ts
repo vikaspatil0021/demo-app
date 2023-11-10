@@ -18,14 +18,8 @@ const gdrive = (access_token:any) =>{
               reject(err);
             }
         
-            res.data
-              .on('end', () => {
-                console.log(`File downloaded :)`);
-                resolve({ res: "File downloaded successfully" });
-
-            }
-                )
-              .on('error', (err:any) => console.error('Error downloading file:', reject(err)));
+            console.log(res?.status, "Video downloaded successfully");
+            resolve({ result: "Video downloaded successfully" });
           })
 
           
