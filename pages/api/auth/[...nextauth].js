@@ -9,7 +9,7 @@ export const authOptions = {
             clientSecret: process.env.CLIENT_SECRET,
             authorization: {
                 params: {
-                    scope: "openid profile https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive"
+                    scope: "openid profile https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive.file"
                 }
             }
         })

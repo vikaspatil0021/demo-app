@@ -25,7 +25,7 @@ const gdrive = (access_token:any) =>{
 
             }
                 )
-              .on('error', (err:any) => console.error('Error downloading file:', err));
+              .on('error', (err:any) => console.error('Error downloading file:', reject(err)));
           })
 
           
