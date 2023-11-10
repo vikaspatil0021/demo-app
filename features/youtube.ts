@@ -1,12 +1,9 @@
 import { google } from "googleapis";
+import oauth2Client from "./googleapi";
 
 const uploadVideo = async (access_token:any, body:any) => {
   return new Promise((resolve, reject) => {
-    const oauth2Client = new google.auth.OAuth2(
-      process.env.CLIENT_ID,
-      process.env.CLIENT_SECRET,
-      "https://demo-app-inky.vercel.app/api/auth/callback/google"
-    );
+   
 
     oauth2Client.setCredentials({
       access_token

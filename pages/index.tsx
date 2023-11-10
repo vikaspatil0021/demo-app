@@ -44,6 +44,17 @@ export default function Home() {
       .then((res) => console.log(res));
   }
 
+  const driveAPI = async () => {
+    await fetch('https://demo-app-inky.vercel.app/api/drive', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ data: session?.data }),
+    }).then((res) => res.json())
+      .then((res) => console.log(res));
+  }
+
   if (session.data === null) {
     return (<>
       <button onClick={()=>signIn()}>Login</button>
@@ -62,7 +73,9 @@ export default function Home() {
         send Video to youtube from s3
       </button>
 
-
+      <button className="px-3 py-2 m-3 bg-green-600 rounded-lg" onClick={driveAPI}>
+        download video from gDrive 
+      </button>
       <div>
 
       </div>
