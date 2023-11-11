@@ -1,10 +1,10 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+
 export default function Home() {
   let session = useSession();
-
   console.log(session);
   const awsAPI = async () => {
-    const { url } = await (await fetch('https://relaxed-mooncake-e4e583.netlify.app/api/awssdk', {
+    const { url } = await (await fetch('https://demo-app-lilac.vercel.app/api/awssdk', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -34,7 +34,7 @@ export default function Home() {
 
 
   const googleAPI = async () => {
-    await fetch('https://relaxed-mooncake-e4e583.netlify.app/api/youtube', {
+    await fetch('https://demo-app-lilac.vercel.app/api/youtube', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -45,7 +45,7 @@ export default function Home() {
   }
 
   const driveAPI = async () => {
-    await fetch('https://relaxed-mooncake-e4e583.netlify.app/api/drive', {
+    await fetch('https://demo-app-lilac.vercel.app/api/drive', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
