@@ -1,8 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import {Headers} from "node-fetch";
 export default function Home() {
   let session = useSession();
-  let myHeaders = new Headers();
 
   console.log(session);
   const awsAPI = async () => {
