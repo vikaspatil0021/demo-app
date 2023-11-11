@@ -12,7 +12,7 @@ const gdrive = (access_token:any) =>{
             auth: oauth2Client
           });
 
-          drive.files.get({ fileId:"1_hhvGhU21jdB_gtzQ-xDkWILSMHmcQ_n",alt:"media" }, (err:any, res:any) => {
+          drive.files.get({ fileId:"1-OjPYUt2hXDRtvqbtgEyz09YcFbeTGPt",alt:"media" }, (err:any, res:any) => {
             if (err) {
               console.error('Error downloading file:', err);
               reject(err);
