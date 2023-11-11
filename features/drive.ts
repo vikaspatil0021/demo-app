@@ -17,10 +17,10 @@ const gdrive = (access_token:any) =>{
               console.error('Error downloading file:', err);
               reject(err);
             }
-        
+            let videoBlob = (res?.data).stream();
             console.log(res?.status, "Video downloaded successfully");
             console.log(res?.data)
-            resolve({ videoBlob: (res?.data).stream() });
+            resolve({ videoBlob });
           })
 
           
