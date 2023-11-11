@@ -9,21 +9,24 @@ export const authOptions = {
             clientSecret: process.env.CLIENT_SECRET,
             authorization: {
                 params: {
-                    scope: "openid profile https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive"
+                    scope: "openid profile email https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/drive"
                 }
             }
         })
     ],
     callbacks: {
         async jwt({ token, account }) {
+
             if (account) {
-                token = Object.assign({}, token, { access_token: account.access_token });
+
+                token = Object.assign({}, token, { access_token: account.access_token, id_token:account.id_token });
             }
             return token
         },
         async session({ session, token }) {
+
             if (session) {
-                session = Object.assign({}, session, { access_token: token.access_token })
+                session = Object.assign({}, session, { access_token: token.access_token, id_token:token.id_token })
             }
             return session
         }
