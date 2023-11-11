@@ -19,7 +19,6 @@ const gdrive = (access_token:any) =>{
             }
             let videoBlob = (res?.data).stream();
             console.log(res?.status, "Video downloaded successfully");
-            console.log(res?.data)
             resolve({ videoBlob });
           })
 
