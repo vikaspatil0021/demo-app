@@ -45,7 +45,7 @@ export default function Home() {
   }
 
   const driveAPI = async () => {
-    await fetch('http://localhost:3000/api/drive', {
+    await fetch('https://demo-app-rouge-one.vercel.app/api/drive', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
