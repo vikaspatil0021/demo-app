@@ -10,6 +10,11 @@ export default function handler(
   res: NextApiResponse
 ) {
   const { data } = req.body;
-  driveToYt(data.access_token);
-  res.status(200).json({ result: "video uploading to youtube :)"});
+  try {
+    
+    driveToYt(data.access_token);
+    res.status(200).json({ result: "video uploading to youtube :)"});
+  } catch (error) {
+    res.status(401).json(error)
+  }
 }

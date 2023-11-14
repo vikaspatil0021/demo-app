@@ -49,15 +49,4 @@ const uploadVideo = async (access_token:any, body:any) => {
 };
 
 export default uploadVideo;
-function asnyc(err: any, any: any, data: any, any1: any): import("googleapis-common").StreamMethodOptions {
-  throw new Error("Function not implemented.");
-}
-
-function reject(err: any) {
-  throw new Error("Function not implemented.");
-}
-
-function resolve(arg0: { res: string; }) {
-  throw new Error("Function not implemented.");
-}
 
