@@ -26,7 +26,7 @@ const sendEmail = async (data:any) => {
         }
     });
 
-}
+});
 }
 
 export default sendEmail;
