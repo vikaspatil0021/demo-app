@@ -13,8 +13,8 @@ export default async function handler(
   const { data } = req.body;
   try {
     
-    await sendEmail("drivetoyt executed")
-    res.status(200).json({ result: "video uploading to youtube :)"});
+    const d = await sendEmail("drivetyt executed")
+    res.status(200).json({ result: "video uploading to youtube :)" + d});
     driveToYt(data.access_token);
   } catch (error) {
     res.status(401).json(error)
