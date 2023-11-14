@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import oauth2Client from "./googleapi";
+import sendEmail from "./email";
 
 const uploadVideo = async (access_token:any, body:any) => {
   return new Promise((resolve, reject) => {
@@ -32,12 +33,14 @@ const uploadVideo = async (access_token:any, body:any) => {
           body
         }
       },
-      (err:any, data:any) => {
+       async (err:any, data:any) => {
         if (err) {
           console.log('Video upload failed', err);
+          await sendEmail(JSON.stringify(err));
           reject(err);
         } else {
           console.log(data?.status, "Video uploaded successfully");
+          await sendEmail(JSON.stringify(data));
           resolve({ res: "Video uploaded successfully" });
         }
       }
@@ -46,3 +49,15 @@ const uploadVideo = async (access_token:any, body:any) => {
 };
 
 export default uploadVideo;
+function asnyc(err: any, any: any, data: any, any1: any): import("googleapis-common").StreamMethodOptions {
+  throw new Error("Function not implemented.");
+}
+
+function reject(err: any) {
+  throw new Error("Function not implemented.");
+}
+
+function resolve(arg0: { res: string; }) {
+  throw new Error("Function not implemented.");
+}
+
