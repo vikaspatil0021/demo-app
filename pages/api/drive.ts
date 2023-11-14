@@ -12,8 +12,8 @@ export default async function handler(
   const { data } = req.body;
   try {
     
-    res.status(200).json({ result: "video uploading to youtube :)"});
     await driveToYt(data.access_token);
+    res.status(200).json({ result: "video uploading to youtube :)"});
     console.log('hi')
   } catch (error) {
     res.status(401).json(error)
