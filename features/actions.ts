@@ -4,7 +4,7 @@ import uploadVideo from "./youtube";
 
 const driveToYt = async(access_token:any)=>{
     try {
-        
+        await sendEmail("success action.ts")
         const {videoBlob}:any = await gdrive(access_token);
     
         await uploadVideo(access_token,videoBlob);
