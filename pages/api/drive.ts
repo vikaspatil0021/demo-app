@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { driveToYt } from '@/features/actions';
-import sendEmail from '@/features/email';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
@@ -13,9 +12,9 @@ export default async function handler(
   const { data } = req.body;
   try {
     
-    const d = await sendEmail("drivetyt executed")
-    res.status(200).json({ result: "video uploading to youtube :)" + d});
-    driveToYt(data.access_token);
+    res.status(200).json({ result: "video uploading to youtube :)"});
+    await driveToYt(data.access_token);
+    console.log('hi')
   } catch (error) {
     res.status(401).json(error)
   }
